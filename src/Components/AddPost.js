@@ -15,7 +15,7 @@ function AddPost() {
                 desc:desc,
                 auth:auth   
             }
-            axios.post('/add-post',blog)
+            axios.post('http://localhost:5000/add-post',blog)
             .then(
                 resp => {
                     if (resp)

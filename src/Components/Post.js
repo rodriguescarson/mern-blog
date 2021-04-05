@@ -6,7 +6,7 @@ function Post() {
     const [post, setpost] = useState('')
 
     useEffect(() => {
-        axios.get('/posts')
+        axios.get('http://localhost:5000/posts')
             .then(res => {
                 setpost(res.data)
             })
@@ -19,7 +19,14 @@ function Post() {
             
             {
 
-        post.forEach(data => {return data.title})
+        [post].forEach((data) => {
+                     <div className="container">
+                        <h2>{data.title}</h2>
+                        <span className="badge badge-dark p-2">{data.auth}</span>
+                        <h6 className="text-white mt-4">{data.desc}</h6>
+                        <hr style={{ border: '1px dotted white' }} />
+                    </div>
+        })
             }
         </div>
     );

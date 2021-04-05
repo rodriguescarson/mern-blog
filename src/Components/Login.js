@@ -14,7 +14,7 @@ function Login() {
             email: email,
             password: pass
         }
-        axios.post('/login', data)
+        axios.post('http://localhost:5000/login', data)
             .then(resp => {
                 if (resp.data == "1")
                 history.push('/posts')
